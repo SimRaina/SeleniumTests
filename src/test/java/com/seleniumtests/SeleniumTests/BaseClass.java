@@ -25,13 +25,21 @@ public class BaseClass {
         driver.manage().window().maximize(); // maximizing the window
     }
     public static void init(String browser, String url){
-
+    	
         if(browser.equalsIgnoreCase("chrome")) {
+        	
         	ChromeOptions options = new ChromeOptions();
-        	options.addArguments("--remote-allow-origins=*");
+        	// Launch Chrome error - Fix #1
+        	// options.addArguments("--remote-allow-origins=*");
+        	
+        	// Launch Chrome error - Fix #2
+        	System.setProperty("webdriver.http.factory", "jdk-http-client");
+        	
         	options.addArguments("--disable-notifications");
+        	
             driver = new ChromeDriver(options); // create instance of chromeDriver and assign to WebDriver ref. variable
         }
+        
         
         else if(browser.equalsIgnoreCase("firefox")) {
         	driver = new FirefoxDriver();
