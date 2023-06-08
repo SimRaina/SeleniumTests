@@ -6,9 +6,8 @@ import java.net.URLConnection;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 
@@ -16,9 +15,10 @@ public class BaseClass {
 
 
     public static void initChrome(){
+    	ChromeOptions options = new ChromeOptions();
+    	options.addArguments("--remote-allow-origins=*");
 
-    	driver = WebDriverManager.chromedriver().create();
-        driver = new ChromeDriver(); // create instance of chromeDriver and assign to WebDriver ref. variable
+        driver = new ChromeDriver(options); // create instance of chromeDriver and assign to WebDriver ref. variable
 
 
         driver.get("http://uitestpractice.com/Students/Widgets"); // open this url
@@ -27,12 +27,13 @@ public class BaseClass {
     public static void init(String browser, String url){
 
         if(browser.equalsIgnoreCase("chrome")) {
-        	driver = WebDriverManager.chromedriver().create();
-            driver = new ChromeDriver(); // create instance of chromeDriver and assign to WebDriver ref. variable
+        	ChromeOptions options = new ChromeOptions();
+        	options.addArguments("--remote-allow-origins=*");
+        	options.addArguments("--disable-notifications");
+            driver = new ChromeDriver(options); // create instance of chromeDriver and assign to WebDriver ref. variable
         }
         
         else if(browser.equalsIgnoreCase("firefox")) {
-        	driver = WebDriverManager.firefoxdriver().create();
         	driver = new FirefoxDriver();
         }
 

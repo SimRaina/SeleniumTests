@@ -2,16 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-19T16:45:15 IST" name="Default suite" finished-at="2022-11-19T16:45:25 IST" duration-ms="10625">
+  <suite started-at="2023-06-08T11:57:26 CEST" name="Default suite" finished-at="2023-06-08T11:57:36 CEST" duration-ms="9582">
     <groups>
     </groups>
-    <test started-at="2022-11-19T16:45:15 IST" name="Default test" finished-at="2022-11-19T16:45:25 IST" duration-ms="10625">
-      <class name="com.seleniumtests.SeleniumTests.FirstSeleniumTest">
-        <test-method signature="firstTest()[pri:0, instance:com.seleniumtests.SeleniumTests.FirstSeleniumTest@a38c7fe]" started-at="2022-11-19T16:45:15 IST" name="firstTest" finished-at="2022-11-19T16:45:25 IST" duration-ms="10527" status="PASS">
+    <test started-at="2023-06-08T11:57:26 CEST" name="Default test" finished-at="2023-06-08T11:57:36 CEST" duration-ms="9582">
+      <class name="com.seleniumtests.SeleniumTests.TC_DatePicker">
+        <test-method is-config="true" signature="preCondition()[pri:0, instance:com.seleniumtests.SeleniumTests.TC_DatePicker@60099951]" started-at="2023-06-08T11:57:26 CEST" name="preCondition" finished-at="2023-06-08T11:57:31 CEST" duration-ms="4902" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- firstTest -->
-      </class> <!-- com.seleniumtests.SeleniumTests.FirstSeleniumTest -->
+        </test-method> <!-- preCondition -->
+        <test-method signature="testDatePicker()[pri:0, instance:com.seleniumtests.SeleniumTests.TC_DatePicker@60099951]" started-at="2023-06-08T11:57:31 CEST" name="testDatePicker" finished-at="2023-06-08T11:57:36 CEST" duration-ms="4473" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDatePicker -->
+        <test-method is-config="true" signature="postCondition()[pri:0, instance:com.seleniumtests.SeleniumTests.TC_DatePicker@60099951]" started-at="2023-06-08T11:57:36 CEST" name="postCondition" finished-at="2023-06-08T11:57:36 CEST" duration-ms="152" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postCondition -->
+      </class> <!-- com.seleniumtests.SeleniumTests.TC_DatePicker -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

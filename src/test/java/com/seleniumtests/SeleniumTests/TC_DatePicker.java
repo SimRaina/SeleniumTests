@@ -19,40 +19,38 @@ public class TC_DatePicker extends BaseClass {
 
     @Test
     public static void testDatePicker() throws InterruptedException {
-        driver.findElement(By.id("onward_cal")).click();
+        driver.findElement(By.xpath("//*[@id=\"onwardCal\"]/div/div")).click();
 
-        String desired_month = "Nov 2022";
-        String desired_date = "2";
+        String desired_month = "Nov 2023";
+        String desired_date = "25";
 
 
 
         while (true) {
 
-            String actual_month = driver.findElement(By.xpath("//tr[@class='rb-monthHeader']/td[2]")).getText();
-            if (actual_month.equals(desired_month)) {
+            String actual_month = driver.findElement(By.xpath("//*[@id=\"onwardCal\"]/div/div[2]/div/div/div[1]/div[2]")).getText();
+            System.out.println(actual_month);
+            if (actual_month.contains(desired_month)) {
                 System.out.println(actual_month);
                 break;
 
             } else {
-                System.out.println(actual_month);
-                driver.findElement(By.xpath("//tr[@class='rb-monthHeader']/td[3]")).click(); // next month
+                driver.findElement(By.xpath("//*[@id=\"onwardCal\"]/div/div[2]/div/div/div[1]/div[3]")).click(); // next month
             }
         }
 
         int column_size = 7; // as per the days (Mon - Sun)
         int flag = 0;
-        int row_size = driver.findElements(By.xpath("//table/tbody/tr")).size(); // 8
-
-        for(int i = 3; i<=row_size; i++){ // row
+        int row_size = driver.findElements(By.xpath("//*[@id=\"onwardCal\"]/div/div[2]/div/div/div[3]/div")).size(); // 8
+        for(int i = 2; i<=row_size; i++){ // row
 
             for(int j = 1; j<= column_size; j++){ // column
 
-                String actual_date = driver.findElement(By.xpath("//table/tbody/tr["+i+"]/td["+j+"]")).getText();
+                String actual_date = driver.findElement(By.xpath("//*[@id=\"onwardCal\"]/div/div[2]/div/div/div[3]/div["+i+"]/span/div["+j+"]")).getText();
 
                 if(actual_date.equals(desired_date)){
-                    driver.findElement(By.xpath("//table/tbody/tr["+i+"]/td["+j+"]")).click();
+                    driver.findElement(By.xpath("//*[@id=\"onwardCal\"]/div/div[2]/div/div/div[3]/div["+i+"]/span/div["+j+"]")).click();
                     flag = 1; // set flag = 1
-                    System.out.println(actual_date);
                     Thread.sleep(3000);
                     break; // breaking out of inner loop
                 }
@@ -67,9 +65,9 @@ public class TC_DatePicker extends BaseClass {
     }
 
     @AfterTest
-    public void postCondition(){
+      public void postCondition(){
 
         closeBrowser();
-    }
+    } 
 }
 

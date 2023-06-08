@@ -2,11 +2,10 @@ package com.seleniumtests.SeleniumTests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestAllBrowsersLaunch {
 
@@ -24,8 +23,9 @@ public class TestAllBrowsersLaunch {
 
     static void testChrome(){
 
-        driver = WebDriverManager.chromedriver().create();
-        driver = new ChromeDriver(); // create instance of chromeDriver and assign to WebDriver ref. variable
+    	ChromeOptions options = new ChromeOptions();
+    	options.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(options); // create instance of chromeDriver and assign to WebDriver ref. variable
 
 
         driver.get("https://www.selenium.dev/"); // open this url
@@ -35,7 +35,6 @@ public class TestAllBrowsersLaunch {
 
     static void testFirefox(){
 
-    	driver = WebDriverManager.firefoxdriver().create();
         driver = new FirefoxDriver();
         driver.get("https://www.selenium.dev/"); // open this url
         driver.manage().window().maximize();
@@ -44,7 +43,6 @@ public class TestAllBrowsersLaunch {
 
     static void testIE(){
 
-    	driver = WebDriverManager.iedriver().create();
         driver = new InternetExplorerDriver();
         driver.get("https://www.selenium.dev/"); // open this url
         driver.manage().window().maximize();
@@ -53,7 +51,6 @@ public class TestAllBrowsersLaunch {
 
     static void testEdge(){
 
-    	driver = WebDriverManager.edgedriver().create();
         driver = new EdgeDriver();
         driver.get("https://www.selenium.dev/"); // open this url
         driver.manage().window().maximize();
