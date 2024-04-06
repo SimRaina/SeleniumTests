@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class TC_JSExec2 extends BaseClass {
 
     static String browser = "chrome";
-    static String url = "http://uitestpractice.com";
+    static String url = "https://github.com/SimRaina?tab=repositories";
 
     @BeforeTest
     public static void preCondition(){
@@ -26,7 +26,7 @@ public class TC_JSExec2 extends BaseClass {
 
         Thread.sleep(3000);
 
-        WebElement button = driver.findElement(By.xpath("//button/a[contains(text(),'Click here')]"));
+        WebElement button = driver.findElement(By.xpath("//a[contains(text(),'SeleniumTests')]"));
 
         js.executeScript("arguments[0].scrollIntoView();", button);
 

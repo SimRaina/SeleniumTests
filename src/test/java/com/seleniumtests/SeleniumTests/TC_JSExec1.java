@@ -11,7 +11,7 @@ public class TC_JSExec1 extends BaseClass {
 
 
     static String browser = "chrome";
-    static String url = "http://uitestpractice.com/Students/Switchto";
+    static String url = "https://github.com/SimRaina?tab=repositories";
 
     @BeforeTest
     public static void preCondition(){

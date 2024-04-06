@@ -14,14 +14,14 @@ public class LocatorTest2CSS extends BaseClass{
     public static void testCSS() throws InterruptedException {
 
         // tag and id
-        driver.findElement(By.cssSelector("input#small-searchterms")).sendKeys("BusyQA");
+        driver.findElement(By.cssSelector("input#small-searchterms")).sendKeys("seniorqa");
         Thread.sleep(2000);
 
         // tag and class
         driver.findElement(By.cssSelector("a.ico-register")).click();
         Thread.sleep(2000);
         // tag and attribute
-        driver.findElement(By.cssSelector("input[name=FirstName]")).sendKeys("Simran");
+        driver.findElement(By.cssSelector("input[name=FirstName]")).sendKeys("Sim");
         Thread.sleep(2000);
         // tag class/id and attribute
         driver.findElement(By.cssSelector("input#LastName[name=LastName]")).sendKeys("Raina");

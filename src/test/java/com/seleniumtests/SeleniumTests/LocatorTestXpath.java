@@ -18,7 +18,7 @@ public class LocatorTestXpath extends BaseClass{
         // driver.findElement(By.xpath("//a[@class='ico-register']")).click();
         // driver.findElement(By.xpath("//a[text()= 'Log in']")).click(); // use complete name of the text
 
-        driver.findElement(By.xpath("//input[contains(@class, 'search-box')]")).sendKeys("busyqa");
+        driver.findElement(By.xpath("//input[contains(@class, 'search-box')]")).sendKeys("seniorqa");
 
         Thread.sleep(2000);
 

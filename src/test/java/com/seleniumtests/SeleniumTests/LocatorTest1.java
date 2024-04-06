@@ -22,7 +22,7 @@ public class LocatorTest1 extends BaseClass{
         // by id
         // driver.findElement(By.id("small-searchterms")).sendKeys("BusyQA"); // locating the element and taking action
        WebElement searchBox = driver.findElement(By.id("small-searchterms"));
-       searchBox.sendKeys("BusyQA");
+       searchBox.sendKeys("seniorqa");
        Thread.sleep(2000);
 
        // by class

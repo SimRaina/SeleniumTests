@@ -23,7 +23,7 @@ public class TC_AlertTestFirefox extends BaseClass {
 
         Thread.sleep(2000);
 
-        driver.switchTo().alert().sendKeys("Simran"); // sendKeys() is working
+        driver.switchTo().alert().sendKeys("seniorqa"); // sendKeys() is working
 
         Thread.sleep(2000);
 

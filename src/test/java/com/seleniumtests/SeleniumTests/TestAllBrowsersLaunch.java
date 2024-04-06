@@ -24,8 +24,7 @@ public class TestAllBrowsersLaunch {
     static void testChrome(){
 
     	ChromeOptions options = new ChromeOptions();
-    	options.addArguments("--remote-allow-origins=*");
-        driver = new ChromeDriver(options); // create instance of chromeDriver and assign to WebDriver ref. variable
+        driver = new ChromeDriver(); // create instance of chromeDriver and assign to WebDriver ref. variable
 
 
         driver.get("https://www.selenium.dev/"); // open this url
