@@ -16,9 +16,9 @@ public class BaseClass {
 
     public static void initChrome(){
     	ChromeOptions options = new ChromeOptions();
-    	options.addArguments("--remote-allow-origins=*");
+    	//options.addArguments("--remote-allow-origins=*");
 
-        driver = new ChromeDriver(options); // create instance of chromeDriver and assign to WebDriver ref. variable
+        driver = new ChromeDriver(); // create instance of chromeDriver and assign to WebDriver ref. variable
 
 
         driver.get("http://uitestpractice.com/Students/Widgets"); // open this url
@@ -35,9 +35,9 @@ public class BaseClass {
         	// Launch Chrome error - Fix #2
         	System.setProperty("webdriver.http.factory", "jdk-http-client");
         	
-        	options.addArguments("--disable-notifications");
+        	//options.addArguments("--disable-notifications");
         	
-            driver = new ChromeDriver(options); // create instance of chromeDriver and assign to WebDriver ref. variable
+            driver = new ChromeDriver(); // create instance of chromeDriver and assign to WebDriver ref. variable
         }
         
         
