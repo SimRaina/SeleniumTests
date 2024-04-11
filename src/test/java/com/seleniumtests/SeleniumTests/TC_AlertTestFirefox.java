@@ -1,6 +1,8 @@
 package com.seleniumtests.SeleniumTests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -8,7 +10,7 @@ import org.testng.annotations.Test;
 public class TC_AlertTestFirefox extends BaseClass {
 
     static String browser = "firefox";
-    static String url = "http://uitestpractice.com/Students/Switchto";
+    static String url = "https://demoqa.com/alerts";
 
     @BeforeTest
     public static void preCondition(){
@@ -19,7 +21,10 @@ public class TC_AlertTestFirefox extends BaseClass {
     @Test
     public static void testAlert2() throws InterruptedException {
 
-        driver.findElement(By.id("prompt")).click();
+    	JavascriptExecutor js = (JavascriptExecutor)driver;
+    	// Need to use JSE as click is not interactable error is faced
+    	WebElement promptbutton = driver.findElement(By.id("promtButton"));
+        js.executeScript("arguments[0].click();", promptbutton);
 
         Thread.sleep(2000);
 

@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class TC_MultiDropDown extends BaseClass {
 
     static String browser = "chrome";
-    static String url = "http://uitestpractice.com/Students/Select";
+    static String url = "https://demoqa.com/select-menu";
 
     @BeforeTest
     public static void preCondition(){
@@ -21,22 +21,22 @@ public class TC_MultiDropDown extends BaseClass {
     @Test
     public static void testMultiDropDown() throws InterruptedException {
 
-        WebElement countries =  driver.findElement(By.id("countriesMultiple"));
+        WebElement cars =  driver.findElement(By.id("cars"));
 
-        Select select_countries = new Select(countries);
+        Select select_cars = new Select(cars);
 
         // selection multiple
-        select_countries.selectByIndex(0);
+        select_cars.selectByIndex(0);
         Thread.sleep(2000);
-        select_countries.selectByValue("china");
+        select_cars.selectByValue("opel");
         Thread.sleep(2000);
-        select_countries.selectByVisibleText("England");
+        select_cars.selectByVisibleText("Saab");
         Thread.sleep(2000);
 
         // deselection
-        select_countries.deselectByValue("china");
+        select_cars.deselectByValue("opel");
         Thread.sleep(2000);
-        select_countries.deselectAll();
+        select_cars.deselectAll();
         Thread.sleep(2000);
     }
 

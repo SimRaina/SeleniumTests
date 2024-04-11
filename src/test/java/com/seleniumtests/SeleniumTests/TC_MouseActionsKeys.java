@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 public class TC_MouseActionsKeys extends BaseClass {
 
     static String browser = "chrome";
-    static String url = "http://uitestpractice.com/Students/Form";
+    static String url = "https://demo.nopcommerce.com/register";
 
     @BeforeTest
     public static void preCondition(){
@@ -23,11 +23,11 @@ public class TC_MouseActionsKeys extends BaseClass {
     public static void testDropDown() throws InterruptedException {
 
         Actions actions = new Actions(driver);
-        WebElement firstname = driver.findElement(By.id("firstname"));
-        WebElement lastname = driver.findElement(By.id("lastname"));
-        WebElement username = driver.findElement(By.id("username"));
+        WebElement firstname = driver.findElement(By.id("FirstName"));
+        WebElement lastname = driver.findElement(By.id("LastName"));
+        WebElement company = driver.findElement(By.id("Company"));
 
-        actions.sendKeys(firstname, "Simran").perform(); // Key Action
+        actions.sendKeys(firstname, "seniorqa").perform(); // Key Action
         actions.click(lastname).sendKeys("Raina").build().perform(); // click is a mouse action
 
         // Keyboard press and release
@@ -36,7 +36,7 @@ public class TC_MouseActionsKeys extends BaseClass {
         Thread.sleep(3000);
         actions.keyDown(Keys.CONTROL).sendKeys("c").keyUp(Keys.CONTROL).build().perform(); // copy action (CTRL+C)
         Thread.sleep(3000);
-        actions.keyDown(username, Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();  // paste action (CTRL+V)
+        actions.keyDown(company, Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();  // paste action (CTRL+V)
         Thread.sleep(3000);
     }
 

@@ -2,7 +2,6 @@ package com.seleniumtests.SeleniumTests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -23,7 +22,7 @@ public class TestAllBrowsersLaunch {
 
     static void testChrome(){
 
-    	ChromeOptions options = new ChromeOptions();
+    	// ChromeOptions options = new ChromeOptions();
         driver = new ChromeDriver(); // create instance of chromeDriver and assign to WebDriver ref. variable
 
 

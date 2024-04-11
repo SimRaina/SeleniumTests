@@ -1,6 +1,7 @@
 package com.seleniumtests.SeleniumTests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterTest;
@@ -10,7 +11,7 @@ import org.testng.annotations.Test;
 public class TC_MouseActions1 extends BaseClass {
 
     static String browser = "chrome";
-    static String url = "http://uitestpractice.com/Students/Actions";
+    static String url = "https://demoqa.com/tool-tips";
 
     @BeforeTest
     public static void preCondition(){
@@ -23,34 +24,24 @@ public class TC_MouseActions1 extends BaseClass {
 
         Actions action = new Actions(driver);
 
+        JavascriptExecutor js = (JavascriptExecutor) driver; // down casting or narrow type conversion
+
         // hover
-        WebElement hover_ele = driver.findElement(By.id("div2"));
+        WebElement hover_ele = driver.findElement(By.id("toolTipButton"));
 
-        action.moveToElement(hover_ele).perform(); // perform() is compulsory for single method/ mouse action
+        js.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.className("text-center")));
+        
+        action.moveToElement(hover_ele).perform(); // perform() is compulsory for mouse action
         Thread.sleep(2000);
 
-        // double click
-
-        WebElement dbl = driver.findElement(By.name("dblClick"));
-        action.doubleClick(dbl).perform();
-        Thread.sleep(2000);
-        driver.switchTo().alert().accept();
 
         // right click
-       // WebElement rt_click = driver.findElement(By.name("click"));
-       // action.contextClick(rt_click).perform();
+          WebElement rt_click = driver.findElement(By.id("texFieldToolTopContainer"));
+          action.contextClick(rt_click).perform();
          Thread.sleep(2000);
 
-        // drag and drop 1
-
-        WebElement drag = driver.findElement(By.id("draggable"));
-        WebElement drop = driver.findElement(By.id("droppable"));
-
-        //action.dragAndDrop(drag, drop).perform();
-        Thread.sleep(2000);
-
-        // drag and drop 2
-       action.clickAndHold(drag).moveToElement(drop).release(drag).build().perform(); // build().perform() for multiple methods / mouse actions
+        
+      // action.clickAndHold(drag).moveToElement(drop).release(drag).build().perform(); // build().perform() for multiple methods / mouse actions
     }
 
     @AfterTest

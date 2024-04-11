@@ -2,6 +2,8 @@ package com.seleniumtests.SeleniumTests;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -9,7 +11,7 @@ import org.testng.annotations.Test;
 public class TC_AlertTestChrome extends BaseClass {
 
     static String browser = "chrome";
-    static String url = "http://uitestpractice.com/Students/Switchto";
+    static String url = "https://demoqa.com/alerts";
 
     @BeforeTest
     public static void preCondition(){
@@ -19,29 +21,37 @@ public class TC_AlertTestChrome extends BaseClass {
 
     @Test
     public static void testAlert1() throws InterruptedException {
-        driver.findElement(By.id("alert")).click();
-
+        // Normal Alert with only OK
+    	WebElement alertbutton=driver.findElement(By.id("alertButton"));
+    	JavascriptExecutor js = (JavascriptExecutor)driver;
+    	// Need to use JSE as click is not interactable error is faced
+    	js.executeScript("arguments[0].click();", alertbutton);
         Thread.sleep(2000);
 
         Alert alert = driver.switchTo().alert();
-
+        alert.accept(); // click OK
+        
+        // get text
+        WebElement confirmbutton = driver.findElement(By.id("confirmButton"));
+        js.executeScript("arguments[0].click();", confirmbutton);
         String text = alert.getText();
         System.out.println(text);
 
         alert.accept(); // OK
 
-        driver.findElement(By.id("confirm")).click();
+        js.executeScript("arguments[0].click();", confirmbutton);
         Thread.sleep(2000);
 
         driver.switchTo().alert().dismiss(); // cancel
 
         Thread.sleep(2000);
 
-        driver.findElement(By.id("prompt")).click();
+        WebElement promptbutton = driver.findElement(By.id("promtButton"));
+        js.executeScript("arguments[0].click();", promptbutton);
 
         Thread.sleep(2000);
 
-        driver.switchTo().alert().sendKeys("Simran"); // not working in chrome
+        driver.switchTo().alert().sendKeys("seniorQA"); // not working in chrome
 
         Thread.sleep(2000);
 

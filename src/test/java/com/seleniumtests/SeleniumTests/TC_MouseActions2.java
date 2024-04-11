@@ -1,6 +1,7 @@
 package com.seleniumtests.SeleniumTests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterTest;
@@ -10,7 +11,7 @@ import org.testng.annotations.Test;
 public class TC_MouseActions2 extends BaseClass {
 
     static String browser = "chrome";
-    static String url = "https://jqueryui.com/slider/";
+    static String url = "https://demoqa.com/droppable";
 
     @BeforeTest
     public static void preCondition(){
@@ -19,17 +20,24 @@ public class TC_MouseActions2 extends BaseClass {
     }
 
     @Test
-    public static void testMouseActionsSlider() throws InterruptedException {
+    public static void testMouseActions1() throws InterruptedException {
+    	JavascriptExecutor js = (JavascriptExecutor) driver; // down casting or narrow type conversion
 
-        WebElement frame1 = driver.findElement(By.className("demo-frame"));
-        driver.switchTo().frame(frame1);
+       Actions action = new Actions(driver);
 
-        WebElement slider = driver.findElement(By.xpath("//div[@id='slider']/span"));
+        // drag and drop
+        Thread.sleep(2000);
 
-        Actions action = new Actions(driver);
-
-        action.dragAndDropBy(slider, 500, 0).perform();
-        Thread.sleep(4000);
+        WebElement drag = driver.findElement(By.id("draggable"));
+        WebElement drop = driver.findElement(By.id("droppable"));
+        
+        js.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.className("text-center")));
+        
+        Thread.sleep(2000);
+        
+        action.dragAndDrop(drag, drop).perform();
+     // action.clickAndHold(drag).moveToElement(drop).release(drag).build().perform(); // build().perform() for multiple methods / mouse actions
+        Thread.sleep(2000);
     }
 
     @AfterTest

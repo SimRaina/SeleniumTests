@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class TC_Frames extends BaseClass {
 
     static String browser = "chrome";
-    static String url = "http://uitestpractice.com/Students/Switchto";
+    static String url = "https://demoqa.com/frames";
 
     @BeforeTest
     public static void preCondition(){
@@ -19,20 +19,20 @@ public class TC_Frames extends BaseClass {
     @Test
     public static void testFrames() throws InterruptedException {
 
-        WebElement frame = driver.findElement(By.name("iframe_a"));
-        driver.switchTo().frame(frame); // WebElement
+        WebElement frame1 = driver.findElement(By.id("frame1"));
+        driver.switchTo().frame(frame1); // frame1 is id of the frame
 
-        // driver.switchTo().frame(0); // index
+        // driver.switchTo().frame(0); // also can use index
 
-        driver.findElement(By.id("name")).sendKeys("Simran");
-
+        String text_inside_frame=driver.findElement(By.id("sampleHeading")).getText();
+        System.out.println(text_inside_frame);
         Thread.sleep(2000);
 
         driver.switchTo().defaultContent(); // bring the control/focus outside the frame back to the web page
         Thread.sleep(2000);
-        driver.findElement(By.id("alert")).click();
-        Thread.sleep(2000);
-        driver.switchTo().alert().accept();
+        
+        WebElement frame2 = driver.findElement(By.id("frame2"));
+        driver.switchTo().frame(frame2); // frame2 is id of the frame
     }
 
     @AfterTest

@@ -6,7 +6,6 @@ import java.net.URLConnection;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BaseClass {
@@ -15,25 +14,25 @@ public class BaseClass {
 
 
     public static void initChrome(){
-    	ChromeOptions options = new ChromeOptions();
-    	//options.addArguments("--remote-allow-origins=*");
+    	// ChromeOptions options = new ChromeOptions();
+    	// options.addArguments("--remote-allow-origins=*");
 
         driver = new ChromeDriver(); // create instance of chromeDriver and assign to WebDriver ref. variable
 
 
-        driver.get("http://uitestpractice.com/Students/Widgets"); // open this url
+        driver.get("https://demo.nopcommerce.com/"); // open this url
         driver.manage().window().maximize(); // maximizing the window
     }
     public static void init(String browser, String url){
     	
         if(browser.equalsIgnoreCase("chrome")) {
         	
-        	ChromeOptions options = new ChromeOptions();
+        	// ChromeOptions options = new ChromeOptions();
         	// Launch Chrome error - Fix #1
         	// options.addArguments("--remote-allow-origins=*");
         	
         	// Launch Chrome error - Fix #2
-        	System.setProperty("webdriver.http.factory", "jdk-http-client");
+        	// System.setProperty("webdriver.http.factory", "jdk-http-client");
         	
         	//options.addArguments("--disable-notifications");
         	

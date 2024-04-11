@@ -20,7 +20,7 @@ public class LocatorTest1 extends BaseClass{
     public static void testLocators() throws InterruptedException {
 
         // by id
-        // driver.findElement(By.id("small-searchterms")).sendKeys("BusyQA"); // locating the element and taking action
+        // driver.findElement(By.id("small-searchterms")).sendKeys("seniorqa"); // locating the element and taking action
        WebElement searchBox = driver.findElement(By.id("small-searchterms"));
        searchBox.sendKeys("seniorqa");
        Thread.sleep(2000);
