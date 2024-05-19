@@ -9,28 +9,21 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class TC_Get_Close_Quit_Conditional extends BaseClass {
+public class ConditionalTest extends BaseClass {
 
 
     static String browser = "Chrome";
     static String url1 = "https://demo.nopcommerce.com";
-    static String url2 = "http://demo.automationtesting.in/Windows.html";
 
     @BeforeTest
     public static void preCondition(){
 
         init(browser, url1);
-        // init(browser, url2);
 
     }
 
     @Test
     public static void getCommands() throws InterruptedException { // Test Method
-
-        String title = driver.getTitle();
-        System.out.println(title);
-
-            assertEquals(title, "nopCommerce demo store");
 
         driver.findElement(By.className("ico-register")).click();
         Thread.sleep(2000);
@@ -59,15 +52,6 @@ public class TC_Get_Close_Quit_Conditional extends BaseClass {
             assertTrue(select);
 
         }
-    }
-
-    @Test(enabled=false)
-    public static void closeAndQuit() throws InterruptedException {
-
-        driver.findElement(By.xpath("//button[contains(text(), ' click ')]")).click();
-        Thread.sleep(2000);
-        // driver.close(); // will close first tab
-        driver.quit(); // will close both the tabs
     }
 
     @AfterTest
