@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.seleniumtests.SeleniumTests.TC_MouseActionsKeys">
+      <class name="com.seleniumtests.SeleniumTests.TC_DatePicker">
         <methods>
+          <include name="testDatePicker"/>
           <include name="preCondition"/>
-          <include name="testDropDown"/>
           <include name="postCondition"/>
         </methods>
-      </class> <!-- com.seleniumtests.SeleniumTests.TC_MouseActionsKeys -->
+      </class> <!-- com.seleniumtests.SeleniumTests.TC_DatePicker -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
