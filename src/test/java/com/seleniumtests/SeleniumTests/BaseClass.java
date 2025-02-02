@@ -52,17 +52,13 @@ public class BaseClass {
     public static void verifyLinks(String link) {
     	 try
          {
-             URL url1 = new URL(link);
+             HttpURLConnection connection = (HttpURLConnection) new URL(link).openConnection();
 
-             URLConnection url2 = url1.openConnection();
+             connection.setConnectTimeout(3000); 
 
-             HttpURLConnection httpURLConnect=(HttpURLConnection)url2; // create connection -> type casting from variable of one class type to another class type
+             connection.connect();
 
-             httpURLConnect.setConnectTimeout(3000); // wait for the response - 3 seconds
-
-             httpURLConnect.connect(); // triggering/hitting the links in the backend
-
-             if(httpURLConnect.getResponseCode()==HttpURLConnection.HTTP_OK) // active link condition
+             if(connection.getResponseCode()==HttpURLConnection.HTTP_OK) // active link condition
              {
                  System.out.println(link+": "+httpURLConnect.getResponseMessage()); // message is success
              }
