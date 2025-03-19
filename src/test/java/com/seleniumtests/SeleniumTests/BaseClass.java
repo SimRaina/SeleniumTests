@@ -12,39 +12,20 @@ public class BaseClass {
 
     static WebDriver driver;
 
-
     public static void initChrome(){
-    	// ChromeOptions options = new ChromeOptions();
-    	// options.addArguments("--remote-allow-origins=*");
-
         driver = new ChromeDriver(); // create instance of chromeDriver and assign to WebDriver ref. variable
-
-
         driver.get("https://demo.nopcommerce.com/"); // open this url
         driver.manage().window().maximize(); // maximizing the window
     }
+    
     public static void init(String browser, String url){
-    	
         if(browser.equalsIgnoreCase("chrome")) {
-        	
-        	// ChromeOptions options = new ChromeOptions();
-        	// Launch Chrome error - Fix #1
-        	// options.addArguments("--remote-allow-origins=*");
-        	
-        	// Launch Chrome error - Fix #2
-        	// System.setProperty("webdriver.http.factory", "jdk-http-client");
-        	
-        	//options.addArguments("--disable-notifications");
-        	
-            driver = new ChromeDriver(); // create instance of chromeDriver and assign to WebDriver ref. variable
+        	driver = new ChromeDriver(); 
         }
-        
         
         else if(browser.equalsIgnoreCase("firefox")) {
         	driver = new FirefoxDriver();
         }
-
-
         driver.get(url); // open this url
         driver.manage().window().maximize(); // maximizing the window
     }
@@ -53,11 +34,8 @@ public class BaseClass {
     	 try
          {
              HttpURLConnection connection = (HttpURLConnection) new URL(link).openConnection();
-
              connection.setConnectTimeout(3000); 
-
              connection.connect();
-
              if(connection.getResponseCode()==HttpURLConnection.HTTP_OK) // active link condition
              {
                  System.out.println(link+": "+httpURLConnect.getResponseMessage()); // message is success
