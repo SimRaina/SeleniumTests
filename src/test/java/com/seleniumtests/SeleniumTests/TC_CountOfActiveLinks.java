@@ -6,6 +6,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.URL;
 import java.util.List;
 
 public class TC_CountOfActiveLinks extends BaseClass {
@@ -22,15 +25,36 @@ public class TC_CountOfActiveLinks extends BaseClass {
     @Test
     public static void testLinks() throws InterruptedException {
 
-        List<WebElement> list = driver.findElements(By.tagName("a"));
-        System.out.println(list.size()); // count the links
+        List<WebElement> links = driver.findElements(By.tagName("a"));
+        System.out.println("Number of links: " + links.size());
+        
+        for (WebElement link : links) {
+            String href = link.getAttribute("href");
 
-        for (WebElement ele : list) {
+            // ignore empty or null href values
+            if (href == null || href.isEmpty()) {
+                System.out.println("Skipping: empty or null href");
+                continue;
+            }
 
-            String link_value = ele.getAttribute("href"); // getAttribute() will fetch the value of the attribute href
-            System.out.println(link_value); // printing the value of the url/links
+            try {
+            	URI uri = URI.create(href);
+                URL url = uri.toURL(); 
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("HEAD");       // faster than GET
+                conn.setConnectTimeout(5000);
+                conn.connect();
 
-            verifyLinks(link_value); // calling verifyLinks for each link on the webpage to check if it is active or broken
+                int status = conn.getResponseCode();
+                if (status >= 200 && status < 400) {
+                    System.out.println(url + " → ACTIVE (" + status + ")");
+                } else {
+                    System.out.println(url + " → BROKEN (" + status + ")");
+                }
+
+            } catch (Exception e) {
+                System.out.println(url + " → ERROR: " + e.getMessage());
+            }
         }
     }
 

@@ -5,8 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class ConditionalTest extends BaseClass {

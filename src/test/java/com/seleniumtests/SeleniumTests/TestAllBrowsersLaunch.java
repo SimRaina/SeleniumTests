@@ -1,39 +1,28 @@
 package com.seleniumtests.SeleniumTests;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class TestAllBrowsersLaunch {
-	
-	static WebDriver driver;
+import org.testng.annotations.Test;
 
-	public static void main(String[] args) {
-		
-		testChrome();
-		testFirefox();
-		testEdge();
-	}
+public class TestAllBrowsersLaunch extends BaseClass {
 	
+    static String browser;
+	static String url = "https://www.selenium.dev/";
+	@Test
 	static void testChrome() {
-		
-		driver = new ChromeDriver();
-		driver.get("https://www.selenium.dev/");
-		driver.manage().window().maximize();
+		browser = "chrome";
+		init(browser, url);
 	}
 	
+	@Test
 	static void testFirefox() {
-		
-		driver = new FirefoxDriver();
-		driver.get("https://www.selenium.dev/");
+		browser = "firefox";
+		init(browser, url);
 	}
 	
+	@Test
 	static void testEdge() {
-		
-		driver = new EdgeDriver();
-		driver.get("https://www.selenium.dev/");
-		driver.manage().window().maximize();
+		browser = "edge";
+		init(browser, url);
 	}
 
 }

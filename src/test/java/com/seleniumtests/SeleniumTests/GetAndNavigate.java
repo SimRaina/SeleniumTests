@@ -1,24 +1,21 @@
 package com.seleniumtests.SeleniumTests;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
-public class GetAndNavigate {
+public class GetAndNavigate extends BaseClass {
 
-	static WebDriver driver;
+	static String browser = "chrome";
+	static String url = "https://demo.nopcommerce.com";
 	
-	public static void main(String[] args) throws InterruptedException {
-		
-		testGetAndNavigate();
-	}
+	@BeforeTest
+    public static void preCondition(){
+
+        init(browser, url);
+    }
 	
+	@Test
 	static void testGetAndNavigate() throws InterruptedException {
-		
-		driver = new ChromeDriver();
-		driver.manage().window().maximize(); // maximize the window
-		
-		// get to open/launch url
-		driver.get("https://demo.nopcommerce.com");
 		
 		// getTitle to get/procure the title of the current web page
 		String actual_title = driver.getTitle();

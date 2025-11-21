@@ -1,19 +1,22 @@
 package com.seleniumtests.SeleniumTests;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
-public class CloseVsQuit {
+public class CloseVsQuit extends BaseClass{
 
-	static WebDriver driver;
+	static String browser = "chrome";
 	static String url = "https://demoqa.com/browser-windows";
 	
-	public static void main(String[] args) throws InterruptedException {
-		
-		testCloseVsQuit();
-	}
+	@BeforeTest
+    public static void preCondition(){
 
+        init(browser, url);
+    }
+
+	@Test
 	static void testCloseVsQuit() throws InterruptedException {
 		
 		driver = new ChromeDriver();

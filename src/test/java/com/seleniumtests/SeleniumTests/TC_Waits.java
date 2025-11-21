@@ -8,7 +8,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class TC_Waits extends BaseClass {
 
@@ -16,13 +15,12 @@ public class TC_Waits extends BaseClass {
     static String url = "https://demo.nopcommerce.com";
     static String url1 = System.getProperty("user.dir") + "\\Resources\\index.html";
 
-    @SuppressWarnings("deprecation")
 	@BeforeTest
     public static void preCondition(){
 
         init(browser, url1);
-        driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
     @Test

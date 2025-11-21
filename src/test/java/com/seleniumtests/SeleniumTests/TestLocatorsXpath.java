@@ -1,25 +1,22 @@
 package com.seleniumtests.SeleniumTests;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
-public class TestLocatorsXpath {
+public class TestLocatorsXpath extends BaseClass {
 
-	static WebDriver driver;
+	static String browser = "chrome";
+	static String url = "https://demo.nopcommerce.com/";
 	
-	public static void main(String[] args) throws InterruptedException {
-		
-		testLocatorsXPath();
+	@BeforeTest
+    public static void preCondition(){
 
-	}
+        init(browser, url);
+    }
 	
+	@Test
 	static void testLocatorsXPath() throws InterruptedException {
-		
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get("https://demo.nopcommerce.com");
-		
 		// 1. XPath with attribute
 		
 		driver.findElement(By.xpath("//input[@id='small-searchterms']")).sendKeys("seniorqa");
