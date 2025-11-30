@@ -1,5 +1,7 @@
 package com.seleniumtests.SeleniumTests;
 
+import static org.testng.Assert.assertEquals;
+
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -19,11 +21,7 @@ public class GetAndNavigate extends BaseClass {
 		
 		// getTitle to get/procure the title of the current web page
 		String actual_title = driver.getTitle();
-		if (actual_title.equals("nopCommerce demo store")) {
-			System.out.println("Title match! Test Passed");
-		}else {
-			System.out.println("Title don't match! Test Failed");
-		}
+		assertEquals(actual_title, "nopCommerce demo store", "Title didn't match!!");
 		
 		//getCurrentUrl to get current web page url
 		String current_url = driver.getCurrentUrl();
