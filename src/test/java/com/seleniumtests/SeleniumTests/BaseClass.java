@@ -1,5 +1,7 @@
 package com.seleniumtests.SeleniumTests;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -29,6 +31,7 @@ public class BaseClass {
         }
         driver.get(url); // open this url
         driver.manage().window().maximize(); // maximizing the window
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
     public static void closeBrowser(){
