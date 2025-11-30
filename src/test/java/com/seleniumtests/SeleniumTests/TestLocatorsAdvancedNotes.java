@@ -10,7 +10,7 @@ import org.openqa.selenium.support.pagefactory.ByChained;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class TestLocatorsXpathAdvancedNotes extends BaseClass {
+public class TestLocatorsAdvancedNotes extends BaseClass {
 
 	static String browser = "chrome";
 	static String url = "https://demo.nopcommerce.com/";
