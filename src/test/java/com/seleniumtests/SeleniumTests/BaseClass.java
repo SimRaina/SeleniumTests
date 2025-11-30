@@ -7,7 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BaseClass {
 
-    static WebDriver driver;
+    public static WebDriver driver;
 
     public static void initChrome(){
         driver = new ChromeDriver(); // create instance of chromeDriver and assign to WebDriver ref. variable

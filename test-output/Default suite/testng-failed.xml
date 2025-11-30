@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.seleniumtests.SeleniumTests.TC_Waits">
+      <class name="com.seleniumtests.JavaStreamsUITests.CountOfActiveLinksTest">
         <methods>
-          <include name="testExplicitWait"/>
-          <include name="postCondition"/>
           <include name="preCondition"/>
+          <include name="test"/>
         </methods>
-      </class> <!-- com.seleniumtests.SeleniumTests.TC_Waits -->
+      </class> <!-- com.seleniumtests.JavaStreamsUITests.CountOfActiveLinksTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

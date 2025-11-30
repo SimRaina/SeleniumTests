@@ -28,6 +28,8 @@ public class TC_CountOfActiveLinks extends BaseClass {
         List<WebElement> links = driver.findElements(By.tagName("a"));
         System.out.println("Number of links: " + links.size());
         
+        // links.stream().map(link -> link.getAttribute("href"));
+        
         for (WebElement link : links) {
             String href = link.getAttribute("href");
 
