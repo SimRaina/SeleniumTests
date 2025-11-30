@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -33,6 +34,14 @@ public class BaseClass {
         driver.manage().window().maximize(); // maximizing the window
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
+    
+    public static void init(String url, ChromeOptions options){
+        driver = new ChromeDriver(options);
+        driver.get(url); // open this url
+        driver.manage().window().maximize(); // maximizing the window
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+    }
+
 
     public static void closeBrowser(){
         driver.close();

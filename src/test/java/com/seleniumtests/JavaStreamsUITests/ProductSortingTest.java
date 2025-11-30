@@ -23,7 +23,11 @@ public class ProductSortingTest {
         driver.get(URL);
 
         List<WebElement> product_items_before_sort = driver.findElements(By.xpath("//h2[@class='product-title']"));
-        List<String> product_names_before_sort = product_items_before_sort.stream().map(i -> i.getText()).sorted().toList();
+        List<String> product_names_before_sort = product_items_before_sort
+        		.stream()
+        		.map(i -> i.getText())
+        		//.sorted()
+        		.toList();
 
         System.out.println("Products Before Sorting: ");
         product_items_before_sort.forEach(i -> System.out.println(i.getText()));

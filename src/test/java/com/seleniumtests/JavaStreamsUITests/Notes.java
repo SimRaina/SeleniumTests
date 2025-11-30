@@ -60,16 +60,6 @@ public class Notes {
 		
 		elements.stream().forEach(e -> System.out.println(e.getText()));
 		
-		// sorted()
-		List<String> sorted = names.stream()
-                .sorted()
-                .toList();
-		
-		// custom comparator
-		List<String> sortedDesc = names.stream()
-                .sorted((a, b) -> b.compareTo(a))
-                .toList();
-		
 		// distinct()
 		List<String> unique = names.stream()
                 .distinct()
@@ -94,12 +84,6 @@ public class Notes {
                 .limit(2)
                 .toList();
 		
-		// reduce()
-		List<Integer> numbers = new LinkedList<>();
-		numbers = List.of(4, 2, 8, 10, 6);
-		int sum = numbers.stream()
-                .reduce(0, (a, b) -> a + b);
-		
 		// QA Automation Examples
 		List<String> visibleTexts = elements.stream()
                 .filter(WebElement::isDisplayed)
@@ -112,11 +96,6 @@ public class Notes {
                 .map(WebElement::getText)
                 .toList();
         
-		boolean validateSorted = dropDownValues.stream()
-									  .sorted()
-									  .toList()
-									  .equals(dropDownValues);
-		
 		boolean hasIndia = select.getOptions().stream()
                 .map(WebElement::getText)
                 .anyMatch(text -> text.equals("India"));

@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-30T15:00:02 CET" name="Default suite" finished-at="2025-11-30T15:00:07 CET" duration-ms="5008">
+  <suite started-at="2025-11-30T15:26:30 CET" name="Default suite" finished-at="2025-11-30T15:26:41 CET" duration-ms="11437">
     <groups>
     </groups>
-    <test started-at="2025-11-30T15:00:02 CET" name="Default test" finished-at="2025-11-30T15:00:07 CET" duration-ms="5008">
-      <class name="com.seleniumtests.SeleniumTests.TC_DatePicker">
-        <test-method is-config="true" signature="preCondition()[pri:0, instance:com.seleniumtests.SeleniumTests.TC_DatePicker@1bd4fdd]" started-at="2025-11-30T15:00:02 CET" name="preCondition" finished-at="2025-11-30T15:00:06 CET" duration-ms="3286" status="PASS">
+    <test started-at="2025-11-30T15:26:30 CET" name="Default test" finished-at="2025-11-30T15:26:41 CET" duration-ms="11437">
+      <class name="com.seleniumtests.SeleniumTests.TC_DropDown">
+        <test-method is-config="true" signature="preCondition()[pri:0, instance:com.seleniumtests.SeleniumTests.TC_DropDown@35d019a3]" started-at="2025-11-30T15:26:30 CET" name="preCondition" finished-at="2025-11-30T15:26:33 CET" duration-ms="3395" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preCondition -->
-        <test-method signature="testDatePicker()[pri:0, instance:com.seleniumtests.SeleniumTests.TC_DatePicker@1bd4fdd]" started-at="2025-11-30T15:00:06 CET" name="testDatePicker" finished-at="2025-11-30T15:00:07 CET" duration-ms="1464" status="PASS">
+        <test-method signature="testDropDown()[pri:0, instance:com.seleniumtests.SeleniumTests.TC_DropDown@35d019a3]" started-at="2025-11-30T15:26:33 CET" name="testDropDown" finished-at="2025-11-30T15:26:41 CET" duration-ms="7827" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testDatePicker -->
-        <test-method is-config="true" signature="postCondition()[pri:0, instance:com.seleniumtests.SeleniumTests.TC_DatePicker@1bd4fdd]" started-at="2025-11-30T15:00:07 CET" name="postCondition" finished-at="2025-11-30T15:00:07 CET" duration-ms="194" status="PASS">
+        </test-method> <!-- testDropDown -->
+        <test-method is-config="true" signature="postCondition()[pri:0, instance:com.seleniumtests.SeleniumTests.TC_DropDown@35d019a3]" started-at="2025-11-30T15:26:41 CET" name="postCondition" finished-at="2025-11-30T15:26:41 CET" duration-ms="172" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- postCondition -->
-      </class> <!-- com.seleniumtests.SeleniumTests.TC_DatePicker -->
+      </class> <!-- com.seleniumtests.SeleniumTests.TC_DropDown -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -32,7 +32,7 @@ public class ProductSortingOptimized {
         // MANUAL EXPECTED SORT (A → Z)
         List<String> expectedSorted =
                 beforeSort.stream()
-                        .sorted()
+                        //.sorted()
                         .toList();
         
         // APPLY SORT ON UI
