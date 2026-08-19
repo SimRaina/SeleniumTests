@@ -30,11 +30,8 @@ public class TC_MouseActions2 extends BaseClass {
         Thread.sleep(2000);
         
         action.dragAndDrop(drag, drop).perform();
-     // action.clickAndHold(drag).moveToElement(drop).release(drag).build().perform(); // build().perform() for multiple methods / mouse actions
+        // action.clickAndHold(drag).moveToElement(drop).release(drag).build().perform(); // build().perform() for multiple methods / mouse actions
         Thread.sleep(2000);
-
-        // dragAndDropBy
-        
     }
 
     @AfterTest
