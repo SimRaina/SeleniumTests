@@ -31,7 +31,7 @@ public class TestLocatorsAdvancedNotes extends BaseClass {
         /* The ByAll class enables you to utilize two By locators at once, 
            finding elements that match either of your By locators */
         By example1 = new ByAll(By.id("password-field"), By.id("username-field"));
-        List<WebElement> login_inputs = driver.findElements(example);
+        List<WebElement> login_inputs = driver.findElements(example1);
         
         // Relative Locator
         By emailLocator = RelativeLocator.with(By.tagName("input")).above(By.id("password"));
