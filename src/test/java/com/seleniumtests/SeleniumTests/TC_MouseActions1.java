@@ -25,7 +25,7 @@ public class TC_MouseActions1 extends BaseClass {
         // hover
         WebElement hover_ele = driver.findElement(By.id("toolTipButton"));
         js.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.className("text-center")));
-        action.moveToElement(hover_ele).perform(); // perform() is compulsory for mouse action
+        action.moveToElement(hover_ele).perform();
         Thread.sleep(2000);
         
         // right click
