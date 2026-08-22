@@ -15,9 +15,7 @@ public class ConditionalTest extends BaseClass {
 
     @BeforeTest
     public static void preCondition(){
-
         init(browser, url1);
-
     }
 
     @Test
@@ -48,7 +46,6 @@ public class ConditionalTest extends BaseClass {
             select = gender.isSelected();
             System.out.println("Checkbox is selected: " + select);
             assertTrue(select);
-
         }
     }
 
