@@ -51,9 +51,6 @@ public class ConditionalTest extends BaseClass {
 
     @AfterTest
     public static void postCondition(){
-
         closeBrowser();
-
     }
-
 }
